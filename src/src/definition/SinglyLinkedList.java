@@ -3,6 +3,7 @@ package definition;
 import adt.SinglyADT;
 
 public class SinglyLinkedList<E> implements SinglyADT<E> {
+    private int size = 0;
 
 
     @Override
@@ -32,6 +33,15 @@ public class SinglyLinkedList<E> implements SinglyADT<E> {
 
     private static class Node<E> implements Comparable<E> {
         private E data;
+
+        public E getData() {
+            return data;
+        }
+
+        public Node<E> getNext() {
+            return next;
+        }
+
         private Node<E> next;
 
         public Node(E data, Node<E> next) {
