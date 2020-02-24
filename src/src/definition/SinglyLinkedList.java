@@ -38,7 +38,16 @@ public class SinglyLinkedList<E> implements SinglyADT<E> {
 
     @Override
     public void add(E item) {
+        add(size, item);
+    }
 
+    private void removefirst() {
+        if (head == null) {
+            throw new IndexOutOfBoundsException(Integer.toString(size));
+        } else {
+            head = head.next;
+            size--;
+        }
     }
 
     @Override
