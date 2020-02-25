@@ -101,6 +101,29 @@ public class Main {
 
     }
 
+    public static SinglyLinkedList searchContact(SinglyLinkedList list, ArrayList list2) {
+        System.out.println("you could search for a contact for their first names:");
+        Scanner scanner = new Scanner(System.in);
+        String fname = scanner.nextLine();
+        int k = 0;
+        for (int i = 0; i < list2.size(); i++) {
+            if (fname.equals(list2.get(i))) {
+                k++;
+            }
+        }
+        if (k == 0) {
+            System.out.println("No results found!");
+        } else {
+            System.out.println(k + "match found!");
+            for (int i = 0; i < list2.size(); i++) {
+                if (fname.equals(list2.get(i))) {
+                    list.print(i + 1);
+                }
+            }
+        }
+        return list;
+    }
+
 
 }
 
